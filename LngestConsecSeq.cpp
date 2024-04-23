@@ -20,8 +20,8 @@ int longestConsecutive(vector<int>& nums) {
         //Ví dụ nums = {100,4,200,1,3,2} thì set.find(99) hợp lệ, num = 100 sẽ được tính là 1 length nên gán curLength = 1
         //đồng thời được chạy xuống vòng while
         //Vì curNum = 100 + 1 = 101 không có trong set nên vòng for sẽ tiếp tục với num = 4
-        //Sau khi kết thúc với num = 4, giá trị của num sẽ là num = 3 với set.find(3 - 1 = 2) != set.end(), lặp lại tương tự với num = 4
-        //Lặp lại cho đến khi num = 1 (mục đích của dòng if(set.find(num - 1) == set.end()))
+        //set.find(4 - 1 = 3) != set.end() nên sẽ tiếp tục với num = 3
+        //Lặp lại cho đến khi num = 1 (mục đích của dòng if(set.find(num - 1) == set.end()) là để tìm tới giá trị nhỏ nhất)
         //set.find(1-1 = 0) == set.end(), num = 1 (là giá trị bé nhất trong nums) sẽ được tính là 1 length -> curLength = 1 
         if(set.find(num - 1) == set.end()) {
             int curNum = num;
